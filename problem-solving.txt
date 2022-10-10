@@ -1,0 +1,24 @@
+The Odin Project: Rock, Paper, Scissors Project
+
+Problem 1: Create a function called "getComputerChoice" that will randomly return "Rock", "Paper", or "Scissors".
+1.a. The basic equation for picking a random number between a range of numbers is:
+	- Math.floor(Math.random() * (1 + High - Low)) + Low;
+1.b. I need to find the high and low values of our array and put that into the equation
+	- The low number in an array = 0, making the equation start as (1 + High - 0) aka (1 + High)
+	- The high number in an array can be found by taking the length and subtracting 1 which makes 		my equation (1 + choices.length - 1)
+	- The +1 and -1 will cancel each other out, leaving me with just choices.length and a whole line of "let cpuChoice = choices[Math.floor(Math.random()*choices.length)];"
+
+
+Problem 2: Write a function that plays a single round of Rock, Paper, Scissors. It should take two parameters: 1. playerSelection 2. computerSelection - and then return a string that declares the winner of the round "You Lose! Paper beats Rock"
+	- Make your function's playerSelection parameter case-insensitive
+1.a. To begin I want to declare the variables I will be using which are playerSelection and cpuChoice
+1.b. After that I'm going to set playerSelection = prompt()
+	- To make the user's input match the case of my comparisons later on I add "playerSelection.trim().toLowerCase();"
+1.c. I create a function called rockpaperscissors and build an if statement for each scenario of the game making sure to include a tie scenario
+
+Important Note: You want to return the results of this function call, not console.log() them. You're going to use what you return later on.
+
+Problem 3: Write a NEW function called "game()". Call the "playRound" function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end
+1.a. Using a for loop I make the game function iterate 5 times
+1.b. Inside the for loop I define three variables to track the wins, losses, and ties
+1.c. I create if/else loops to track the wins/losses
